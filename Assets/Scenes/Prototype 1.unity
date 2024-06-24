@@ -238,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &129829639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,11 +867,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a603654e071b92847acebd742977a082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 50
+  rpm: 12
   horsePower: 200000
-  turnSpeed: 45
-  centerOfMass: {fileID: 193889782}
+  turnSpeed: 70
   speedometerText: {fileID: 1139049246}
-  speed: 0
+  rpmText: {fileID: 0}
+  allWheels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  wheelsOnGround: 4
 --- !u!54 &481222213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1018,7 +1025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &534669903
 AudioListener:
   m_ObjectHideFlags: 0
