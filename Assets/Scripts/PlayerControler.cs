@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -10,9 +11,13 @@ public class PlayerControler : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
     private Rigidbody playerRb;
+    //[SerializeField] GameObject centerOfMass;
+    [SerializeField] TextMeshProUGUI speedometerText;
+    [SerializeField] float speed;
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        //playerRb.centerOfMass = centerOfMass.transform.position;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -25,5 +30,7 @@ public class PlayerControler : MonoBehaviour
         // Rotates the car based on horizontal input
         transform.Rotate(Vector3.up, horizontalInput * turnSpeed * Time.deltaTime);
         //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        speed = Mathf.Round(playerRb.velocity.magnitude * 3.6f);// 3.6 for kph
+        speedometerText.SetText("Speed" + speed + "kmh");
     }
 }
